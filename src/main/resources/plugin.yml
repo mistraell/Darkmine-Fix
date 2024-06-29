@@ -1,0 +1,5 @@
+name: DarkmineFix
+version: '${project.version}'
+main: top.darkmine.comm.darkminefix.DarkmineFix
+api-version: '1.20'
+authors: [ wotyk ]
