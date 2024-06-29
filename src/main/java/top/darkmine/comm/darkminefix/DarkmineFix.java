@@ -35,12 +35,14 @@ public final class DarkmineFix extends JavaPlugin implements @NotNull Listener {
         String s =event.getMessage();
         String[] stp= s.split(" ");
         String eventPlayerName = event.getPlayer().getName();
-        String playerName = stp[2];
-        if (event.getMessage().startsWith("/enchant") || event.getMessage().startsWith("/cmi enchant") || event.getMessage().startsWith("/minecraft:enchant")) {
+        String playerName = "";
+        if(stp.length > 2)
+            playerName = stp[2];
+        if (event.getMessage().startsWith("/enchant") || event.getMessage().startsWith("/cmi enchant") || event.getMessage().startsWith("/cmi:enchant")|| event.getMessage().startsWith("/minecraft:enchant")) {
             CheckEnchantCommand(stp, playerName, event);
-        }else if (event.getMessage().startsWith("/effect ") || event.getMessage().startsWith("/cmi effect ") || event.getMessage().startsWith("/minecraft:effect ")) {
+        }else if (event.getMessage().startsWith("/effect ") || event.getMessage().startsWith("/cmi effect ")|| event.getMessage().startsWith("/cmi:effect ") || event.getMessage().startsWith("/minecraft:effect ")) {
             CheckEffectCommand(stp, playerName, event);
-        }else if (event.getMessage().startsWith("/tppos") || event.getMessage().startsWith("/cmi tppos")) {
+        }else if (event.getMessage().startsWith("/tppos") || event.getMessage().startsWith("/cmi tppos")|| event.getMessage().startsWith("/cmi:tppos")) {
             CheckTpposCommand(stp, playerName, event);
         }
     }
